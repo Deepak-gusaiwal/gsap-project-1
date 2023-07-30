@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.btn {
+  padding: 0.2rem 0.5rem;
+  text-transform: capitalize;
+  max-width: 100px;
+  text-align: center;
+  border-radius: 2rem;
+}
+.btn-primary {
+  border: 1px solid white;
+}
+.btn-primary:hover{
+  background-color: black;
+  color: white;
+}
+
+.commonLink{
+  text-transform: uppercase;
+  font-size: max(1vw,0.9rem);
+  position: relative;
+}
+.commonLink::before{
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition:transform .3s;
+}
+.commonLink:hover::before{
+  transform: scale(1);
+  transform-origin:bottom left;
+}
+
+.scaleCommonLink{
+  transform: scale(1.5);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+/* curserCircle */
+.curserCircle{
+  width:10px;
+  height:10px;
+  border-radius: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  backdrop-filter: invert(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* bounding element */
+.bounding{
+  overflow: hidden;
+ }
+ .boundingElm{
+  transform: translateY(100%);
+ }
+
+/* main */
+main {
+  width: 100%;
+  background-color: black;
+}
+
+:root {
+  --headerHeight: 60px;
+  --commonPaddingInline: max(2vw, 1rem);
+}
+
+/* header css */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--headerHeight);
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 0rem var(--commonPaddingInline);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+header .navLogo {
+  font-size: max(1.5vw, 1.2rem);
+  font-weight: 500;
+}
+header .navMenuToggler {
+  font-size: max(1vw, 1rem);
+  font-weight: 500;
+}
+
+/* heroSection */
+.heroSection {
+  width: 100%;
+  height: calc(100vh - var(--headerHeight));
+  background-color: black;
+  color: white;
+  padding: 1rem var(--commonPaddingInline);
+  position: relative;
+}
+
+.heroSection .heroTop {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  padding: max(4vw, 2rem) 1rem;
+}
+.heroSection h1 {
+  font-size: max(9vw, 4rem);
+  line-height: 0.85;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-left: 0;
+  padding: 0;
+}
+.heroSection .heroTop .heroBlockText {
+  margin-left: max(10vw, 1rem);
+  width: fit-content;
+  text-align: right;
+}
+.heroSection .heroTop h5 {
+  text-align: right;
+  opacity: 0.8;
+}
+.heroMiddle {
+  padding-top: max(5vw, 2rem);
+}
+.heroMiddle h5 {
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.heroBottom {
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem var(--commonPaddingInline);
+}
+.heroBottomIconBox i {
+  background-color: rgb(163, 163, 163);
+  color: black;
+  padding: 0.3rem;
+  font-weight: bold;
+  border-radius: 100%;
+}
+
+/* projectSection */
+.projectSection {
+  color: #fff;
+  padding: max(12vw,1rem) var(--commonPaddingInline);
+  background-color: black;
+  overflow: hidden;
+}
+.projectSection .projectBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(138, 138, 138);
+  max-width: max(90%,250px);
+  margin: 0 auto;
+  position: relative;
+}
+.projectSection .projectBox:last-child {
+  border-bottom: 1px solid rgb(138, 138, 138);
+}
+.projectSection .projectBox .imgBox {
+  position: absolute;
+  width: max(25%,250px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  background-color: rgb(59, 59, 59);
+  z-index: 1;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  pointer-events: none;
+ 
+}
+
+
+
+.projectSection .projectBox h2 {
+  font-size: max(6vw, 2rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.projectSection .projectBox:hover span {
+  opacity: 0.5;
+}
+.projectSection .projectBox:hover h2 {
+  opacity: 0.5;
+  transform: translateX(10%);
+}
+/* aboutSection */
+.aboutSection {
+  padding: var(--commonPaddingInline) var(--commonPaddingInline);
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 400px;
+}
+.aboutSectionWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.aboutSection .imgBox {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.aboutSection .imgBox img {
+  object-fit: cover;
+}
+.aboutSection .contentBox {
+  width: max(40vw, 300px);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1vw;
+}
+.aboutSection .contentBox span {
+  opacity: 0.7;
+}
+
+/* subscribeBox */
+.subscribeBox{
+  background-color: black;
+  color: white;
+  padding: 1rem var(--commonPaddingInline);
+  padding-bottom: max(5vw,1rem);
+}
+.subscribeBox h5{
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* footer */
+footer{
+  padding: 1rem var(--commonPaddingInline);
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .footerTimeBox{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .footerLinks{
+  display: flex;
+  gap: max(1vw,0.5rem);
+  align-items: center;
+  flex-wrap: wrap;
+}
