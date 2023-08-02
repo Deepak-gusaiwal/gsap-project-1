@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+/* commonLink */
+.commonLink{
+    text-transform: uppercase;
+    font-size: max(1vw,0.9rem);
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .commonLink::before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition:transform .3s;
+  }
+  .commonLink:hover::before{
+    transform: scaleX(1);
+    transform-origin:bottom left;
+  }
+  .commonLink i{
+    transition: 200ms;
+  }
+  .commonLink:hover i{
+    transform: rotate(-10deg) scale(1.2);
+  }
+  /* cursurFollower */
+  .cursurFollower{
+    width: 10px;
+    height: 10px;
+    /* background-color: white; */
+    border-radius: 50%;
+    position: fixed;
+    z-index: 2;
+    pointer-events: none;
+    left: 50;
+    right: 50;
+    transform: translate(-50%,-50%);
+    backdrop-filter: invert(100%);
+  }
+:root{
+    --black:rgb(26, 26, 26);
+    --commonPadding:max(2vw,1rem);
+    --navHeight:60px;
+    --grayColor:rgb(176, 176, 176);
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+/* main */
+main{
+    background-color: black;
+    color: white;
+}
+/* header css */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--navHeight);
+    padding: 0 var(--commonPadding);
+}
+.navLogo{
+    font-weight: bold;
+    font-size: max(2vw,1.4rem);
+}
+.navToggler{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+/* heroSection */
+.heroSection{
+    width: 100%;
+    height: calc(100vh - var(--navHeight));
+    padding: max(5vw,2rem) var(--commonPadding);
+    padding-bottom: max(6vw,2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-transform: uppercase;
+    position: relative;
+}
+.bounding{
+    overflow: hidden;
+}
+
+
+.heroTop h1{
+    font-size: max(9vw,3.6rem);
+    font-weight: 600;
+    line-height: 0.9;
+    color: var(--grayColor);
+}
+.heroTop .topMerger h1{
+padding-left: max(10vw,1.5rem);
+}
+.heroTop .topMerger{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.heroTop h5{
+    padding-right: 0.2rem;
+    font-weight: 600;
+}
+.heoMiddle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+.heoMiddle h5{
+    font-weight: 600;
+}
+.heroBottom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem var(--commonPadding);
+}
+.heroBottomIconBox{
+    display: flex;
+    gap: 0.7rem;
+}
+.heroBottomIconBox a{
+    background-color: var(--grayColor);
+    color: black;
+    width:25px;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* projectSection */
+.projectSection{
+    display: flex;
+    flex-direction: column;
+    padding: max(6vw,2rem) var(--commonPadding);
+}
+.projectBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid var(--grayColor);
+    color: var(--grayColor);
+    text-transform: uppercase;
+    position: relative;
+}
+.projectBox h4{
+    font-size: max(3.5vw,2rem);
+    font-weight: 600;
+}
+.projectBox .imgBox{
+    width: max(20vw,200px);
+    aspect-ratio: 1/1;
+    background-color: rgb(120, 120, 120);
+    border: 1px solid black;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    z-index: 1;
+}
